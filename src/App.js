@@ -5,7 +5,9 @@ import Time from "./components/Time";
 Given the time limitations, I have not repeated what I completed
 in the API section of this tech test (implemented a linter, any CI/CD
 through GitHub Actions, or any testing). Given more time, these would
-have been my priority when setting up the project.
+have been my priority when setting up the project. I would have also
+liked to improve the general styling and responsiveness, as currently
+it renders poorly on mobile.
 */
 function App() {
   return (
