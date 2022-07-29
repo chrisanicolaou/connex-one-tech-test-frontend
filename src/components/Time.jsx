@@ -22,12 +22,15 @@ function Time() {
     return () => clearInterval(interval);
   }, [serverTime]);
 
+  // useEffect to check the timer and trigger the above
+  // useEffect once 30 seconds have passed.
   useEffect(() => {
     if (refetchTimer >= 30) {
       setServerTime(0);
     }
   }, [refetchTimer]);
 
+  // Async function for making the API call
   const refreshServerTime = async () => {
     setIsLoading(true);
     const result = await getReq("/time");
@@ -50,6 +53,7 @@ function Time() {
     return timeArray.join(":");
   };
 
+  // Returns "loading" whenever the API call hasn't completed
   if (isLoading) {
     return (
       <div className="w-full border-r-4 text-center text-9xl p-10 md:w-1/2">
@@ -58,6 +62,7 @@ function Time() {
     );
   }
 
+  // Returns the metric whenever the API call is complete
   return (
     <div className="w-full border-r-4 text-center md:w-1/2">
       <p className="text-5xl py-10 pb-20 hover:text-7xl">Timer</p>
