@@ -43,11 +43,11 @@ function Time() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="w-1/2 border-r-4">Loading...</div>;
   }
 
   return (
-    <div>
+    <div className="w-1/2 border-r-4">
       <p>Server Time: {serverTime}</p>
       <p> Time since refresh: {formatTimer(refetchTimer)}</p>
     </div>
