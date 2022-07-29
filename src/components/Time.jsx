@@ -43,13 +43,20 @@ function Time() {
   };
 
   if (isLoading) {
-    return <div className="w-1/2 border-r-4">Loading...</div>;
+    return (
+      <div className="w-full border-r-4 text-center text-9xl p-10 md:w-1/2">
+        Loading...
+      </div>
+    );
   }
 
   return (
-    <div className="w-1/2 border-r-4">
-      <p>Server Time: {serverTime}</p>
-      <p> Time since refresh: {formatTimer(refetchTimer)}</p>
+    <div className="w-full border-r-4 text-center md:w-1/2">
+      <p className="text-5xl py-10 pb-20 hover:text-7xl">Timer</p>
+      <p className="text-2xl pb-10 hover:text-3xl">Server Time: {serverTime}</p>
+      <p className="text-2xl pb-10 hover:text-3xl">
+        Time since refresh: {formatTimer(refetchTimer)}
+      </p>
     </div>
   );
 }

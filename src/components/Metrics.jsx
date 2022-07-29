@@ -30,19 +30,29 @@ function Metrics() {
     setIsLoading(false);
   };
 
-  if (isLoading) return <div className="w-1/2 border-l-4">Loading...</div>;
+  if (isLoading)
+    return (
+      <div className="w-full border-l-4 text-center text-9xl p-10 md:w-1/2">
+        Loading...
+      </div>
+    );
 
   return (
-    <div className="w-1/2 border-l-4">
+    <div className="w-full border-l-4 text-center md:w-1/2">
       <ul>
-        Prometheus Metrics
+        <p className="text-5xl py-10 pb-20 hover:text-7xl">
+          Prometheus Metrics
+        </p>
         {metrics.map((metric) => {
           return (
-            <li key={metric.name}>
-              <p>Name: {metric.name}</p>
-              <p>Help: {metric.help}</p>
-              <p>Type: {metric.type}</p>
-              <p>Value: {metric.metrics[0]?.value || "Not available"}</p>
+            <li
+              key={metric.name}
+              className="border-2 border-black p-3 m-5 hover:bg-slate-300"
+            >
+              <pre>Name: {metric.name}</pre>
+              <pre>Help: {metric.help}</pre>
+              <pre>Type: {metric.type}</pre>
+              <pre>Value: {metric.metrics[0]?.value || "Not available"}</pre>
             </li>
           );
         })}

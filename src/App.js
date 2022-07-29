@@ -3,7 +3,7 @@ import Time from "./components/Time";
 
 function App() {
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row">
       <Time />
       <Metrics />
     </div>
