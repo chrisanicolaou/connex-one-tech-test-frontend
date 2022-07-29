@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import getReq from "../utils/api";
 
+/* 
+Component for fetching and rendering the server Epoch time
+and the elapsed time since the last call. I'm sure there is a cleaner
+way to make repeat API calls without repeat useEffects, but
+this solution works and was the quickest I could figure out how to
+implement in the time constraint.
+*/
 function Time() {
   const [serverTime, setServerTime] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [refetchTimer, setRefetchTimer] = useState(0);
 
+  // useEffect that makes the API call
   useEffect(() => {
     refreshServerTime();
     const interval = setInterval(() => {

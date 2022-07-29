@@ -6,7 +6,7 @@
 
 ---
 
-**This application is hosted on (hosting platform), and can be viewed online using (link once hosted). Alternatively, if you would like to view the app locally, please follow the [setup](#setup) instructions.**
+**This application is hosted on [Netlify](https://www.netlify.com/), and can be viewed online using [here](https://significant-lifechanging-website.netlify.app/). Alternatively, if you would like to view the app locally, please follow the [setup](#setup) instructions.**
 
 ---
 
